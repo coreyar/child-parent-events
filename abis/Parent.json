@@ -1,0 +1,22 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "son",
+        "type": "address"
+      }
+    ],
+    "name": "NewChild",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "bringNewLife",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

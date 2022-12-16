@@ -1,0 +1,28 @@
+specVersion: 0.0.4
+description: Gravatar for Ethereum
+repository: https://github.com/graphprotocol/example-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Parent
+    network: chapel
+    source:
+      address: '0x549fB5626025237351446ac502DEcdf2f3A4C570'
+      abi: Parent
+      startBlock: 25509950
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Gravatar
+      abis:
+        - name: Parent
+          file: ./abis/Parent.json
+        - name: Child
+          file: ./abis/Child.json
+      eventHandlers:
+        - event: NewChild(address)
+          handler: handleNewChild
+      file: ./src/mapping.ts
